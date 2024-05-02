@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.iu.habahram</groupId>
-	<artifactId>database-demo</artifactId>
+	<artifactId>database-final</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>database-demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>database-final</name>
+	<description>Final project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

@@ -7,32 +7,20 @@ import jakarta.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(schema = "lectures", name="customers")
+@Table(schema = "flowers", name="customers")
 public final class Customer {
     @Id
-    private  String username;
     private  String password;
     private  String email;
 
     public Customer() {
     }
 
-    public Customer(String username,
-                    String password,
+    public Customer(String password,
                     String email) {
-        this.username = username;
         this.password = password;
         this.email = email;
     }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getPassword() {
         return password;
     }

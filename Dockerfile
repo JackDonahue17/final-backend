@@ -1,5 +1,4 @@
 FROM eclipse-temurin:17
 WORKDIR /home
-COPY ./flowers ./flowers
-COPY ./target/database-demo-0.0.1-SNAPSHOT.jar database-demo.jar
-ENTRYPOINT ["java", "-jar", "database-demo.jar"]
+COPY ./target/coffee-order-0.0.1-SNAPSHOT.jar coffee-order.jar
+ENTRYPOINT ["java", "-jar", "coffee-order.jar"]

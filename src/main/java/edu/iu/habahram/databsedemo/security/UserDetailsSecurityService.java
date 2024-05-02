@@ -20,16 +20,16 @@ public class UserDetailsSecurityService implements
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username)
+    public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {
         try {
             Customer customer =
-                    customerRepository.findByUsername(username);
+                    customerRepository.findByEmail(email);
             if(customer == null) {
                 throw new UsernameNotFoundException("");
             }
             return User
-                    .withUsername(username)
+                    .withUsername(email)
                     .password(customer.getPassword())
                     .build();
         } catch (Exception e) {

@@ -10,6 +10,7 @@ import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -63,5 +64,18 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.OK).body(orders);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Order> getOrder(@PathVariable int id) {
+        String username = getTheCurrentLoggedInCustomer();
+        if(username.trim().isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+        Optional<Order> order = orderRepository.findById(id);
 
+        if(order.isPresent()) {
+            return ResponseEntity.ok(order.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

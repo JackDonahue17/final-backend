@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(schema = "lectures", name = "flowers")
+@Table(schema = "flowers", name = "flowers")
 public class Flower {
     @Id
     @GeneratedValue
